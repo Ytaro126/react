@@ -9,3 +9,5 @@ const ColorfulMessage = (props) => {
 };
 
 export default ColorfulMessage;
+
+const a = 1
