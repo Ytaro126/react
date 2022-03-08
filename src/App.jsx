@@ -1,45 +1,33 @@
-/**/
+import React from "react";
 
-import React, { useEffect, useState } from "react";
-import ColorfulMessage from "./components/ColorfulMessage";
-
-const App = () => {
-  console.log('sasih')
-  const [num,setNum] = useState(0);
-  const [faceShowFlag,setFaceShowFlag] = useState(false);
-
-  const onClickUp = () => {
-    setNum(num + 1);
-  };
-
-  const onClickSwitchShowFlag = () => {
-    setFaceShowFlag(!faceShowFlag);
-  };
-
-  useEffect(() => {
-    if(num > 0){
-      if(num % 3 === 0){
-        faceShowFlag || setFaceShowFlag(true);
-      }else{
-        faceShowFlag && setFaceShowFlag(false);
-      }
-    }
-  },[num]);
-
-
-  return(
-    <>
-      <h1 style={{color:'red'}}>こんにちは</h1>
-      <ColorfulMessage color='blue'>お元気ですか</ColorfulMessage>
-      <ColorfulMessage color='pink'>元気です</ColorfulMessage>
-      <button onClick={onClickUp}>カウントアップ</button>
-      <br/>
-      <button onClick={onClickSwitchShowFlag}>on/off</button>
-      <p>{num}</p>
-      {faceShowFlag && <p>iii</p>}
-      
-    </>
-  );
-};
-
-export default App;
+export const App = () => {
+    return (  
+      <>
+        <div>
+          <input placeholder="TODOを入力"/>
+          <button>追加</button>
+        </div>
+        <div>
+          <p>未完了のTODO</p>
+          <ul>
+            <li>aaaa</li>
+            <button>完了</button>
+            <button>削除</button>
+          </ul>
+          <ul>
+            <li>いいいい</li>
+            <button>完了</button>
+            <button>削除</button>
+          </ul>
+        </div>
+        <div>
+          <p>完了のTODO</p>
+          <ul>
+            <li>aaaa</li>
+            <button>完了</button>
+            <button>削除</button>
+          </ul>
+        </div>
+      </>
+    )
+}
